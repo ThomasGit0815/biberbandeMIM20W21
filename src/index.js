@@ -58,6 +58,10 @@ const play = (game) => {
   } = game;
 
   const gameOn = () => {
+    if (debug) {
+      console.log("round", round);
+      console.log("lastTurn", lastTurn);
+    }
     if (round === lastTurn) {
       gameOver();
       return;
@@ -135,6 +139,8 @@ const play = (game) => {
     [pile[position], currentCard] = [currentCard, pile[position]];
     if (debug) console.log("After", JSON.parse(JSON.stringify(pile)));
 
+    console.log(pile);
+
     if (currentPlayer === PLAYER.HUMAN) {
       discard();
     }
@@ -171,6 +177,11 @@ const play = (game) => {
       (pos) => computer[pos] > upmostCard
     );
 
+    console.log(
+      `Computer draws from ${
+        takeFromDiscardPile ? PILE.DISCARD_PILE : PILE.PILE
+      }`
+    );
     draw({
       selectedPile: takeFromDiscardPile ? PILE.DISCARD_PILE : PILE.PILE,
     });
@@ -188,7 +199,7 @@ const play = (game) => {
         `Computer swaps with card on position: ${position[position.length - 1]}`
       );
       swap({ position: position[position.length - 1] });
-    } else if (computerBrain.length < 4 /*&& currentCard < 5*/) {
+    } else if (computerBrain.length < 4 && currentCard < 5) {
       /*
       This is a risky move
       If the computer doesn't know all cards AND the current card is less than 5, it might be a good idea to take the risk and swap with an unknown card
@@ -214,7 +225,7 @@ const play = (game) => {
       return acc + temp;
     }, 0);
     if (lastTurn < 0 && ((round > 4 && guessedValue < 10) || round > 8)) {
-      lastTurn = knock();
+      knock();
     }
   };
 
