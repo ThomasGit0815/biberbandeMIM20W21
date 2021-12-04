@@ -234,9 +234,21 @@ const play = (game) => {
   window.swap = (position) => swap({ position });
   window.discard = discard;
   window.knock = knock;
+  window.help = () => {
+    console.log("Functions you can use:");
+    console.log("drawPile", "Draw a card from pile");
+    console.log("drawDiscardPile", "Draw a card from discard pile");
+    console.log(
+      "swap(position)",
+      "Swap drawn card with one of your cards, expects value from 0 to 3"
+    );
+    console.log("discard", "Discard card in your hand");
+    console.log("knock", "Knock and finish game.");
+    console.log("help", "Shows this message");
+  };
 
   console.log("We are playing!");
-  console.log(`Those are your outhermost cards: ${player[0]} | ${player[3]}`);
+  console.log(`Those are your outermost cards: ${player[0]} | ${player[3]}`);
 
   gameOn();
 };
