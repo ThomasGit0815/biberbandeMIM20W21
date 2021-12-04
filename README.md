@@ -28,5 +28,6 @@
 - I do not really have error handling yet, so you have to stick to the rules!
   - draw => drawPile or drawDiscardPile()
   - swap(position) or discard()
+- SPY card does not do anything yet
 
 ![](console_game.png)
