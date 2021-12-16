@@ -6,9 +6,6 @@
 - webpack, babel
 
 ```
-    # go to project dir
-    cd src
-
     # install dependencies
     npm i
 ```
@@ -16,9 +13,6 @@
 ## Play
 
 ```
-    # go to project dir
-    cd src
-
     # start application
     npm start
 ```
