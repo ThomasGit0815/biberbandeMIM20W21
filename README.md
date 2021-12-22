@@ -17,13 +17,16 @@ repository für den Prototypen zum Projekt "Biberbande"
 ```
 
 - Spielstart mit "Start Runde" (auf dem Ablagestapel erscheint die Karte des Computers)
-- über "Karten zeigen (außen)" können die beiden äußeren Karten angezeigt werden
+- über "Karten zeigen (außen)" können die beiden äußeren Karten angezeigt werden 
+    (die Karten werden automatisch nach 2 Sekunden wieder ausgeblendet)
   - jetzt entweder die Karte des Ablagestapels nehmen und direkt gegen eine Karte
     tauschen (hierzu entweder "Tausche 1." oder "Tausche 2." ... drücken, wenn die 
     Karte des Ablagestapels mit einer der vier Karten tauschen möchte)
   - oder eine Karte vom Ziehstapel nehmen, hierzu "vom Stapel ziehen" auswählen, 
     die Karte wird direkt angezeigt. Soll diese Karte gegen eine der vier getauscht
     werden, dann wieder "Tausche 1." oder "Tausche 2." usw. auswählen.
+  - die gezogene Karte des Ziehstapels kann auch wieder direkt auf den Ablagestapel
+    zurückgelegt werden. Hierzu "Karte abwerfen" auswählen.
   - "Wertungsrunde" kann immer ausgewählt werden. Der Spieler und der Computer
     ist anschließend noch einmal dran.
   
