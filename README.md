@@ -28,5 +28,5 @@ repository für den Prototypen zum Projekt "Biberbande"
     ist anschließend noch einmal dran.
   
 
-![](console_game.png)
+![](biberbande_testui.png)
 
