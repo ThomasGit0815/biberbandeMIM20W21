@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+    <meta charset="utf-8">
+    <title>Entwurf zum Kartenspiel Biberbande</title>
+    <meta name="description" content="Biberbande">
+    <meta name="author" content="Vanessa, Lee, Julian, Tino, Thomas">
+    <meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />		
+    <link href="css/design.css" type="text/css" rel="stylesheet">
+	
+</head>
+  
+  
+  <body>
+	
+    <h1>Hello Biberbande</h1>
+    <!-- script src="bundle.js"></script -->
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <div id="header"></div>
+    <div id="app"></div>
+	
+	   <div class="biberContainer">
+
+        <div id="biberLeft">
+           
+            <div class="leftContainer">
+
+                <center><img src="images/Biber.png" width="100px" height="120px"></center>
+				<button tabindex="10" class="buttonBiberbild" onclick="startGame()">Starte Runde</button>
+				<button tabindex="11" class="buttonBiberbild" onclick="showOutermostCards()">Karten zeigen (außen)</button>
+				<button tabindex="12" class="buttonBiberbild" onclick="drawPile()">vom Stapel ziehen</button>	
+				<button tabindex="13" class="buttonBiberbild" onclick="discard()">Karte abwerfen</button>					
+				<button tabindex="14" class="buttonBiberbild" onclick="swap01()">Tausche 1.</button>
+				<button tabindex="15" class="buttonBiberbild" onclick="swap02()">Tausche 2.</button>
+				<button tabindex="16" class="buttonBiberbild" onclick="swap03()">Tausche 3.</button>
+				<button tabindex="17" class="buttonBiberbild" onclick="swap04()">Tausche 4.</button>
+                <button tabindex="18" class="buttonNeueRunde" onclick="knock()">Wertungsrunde</button>            			
+               				
+            </div>
+
+        </div>
+
+
+        <div id="biberCenter">
+
+            <div class="biberCenterContainer">
+
+                <div tabindex="21" class="border-box" id="CompCard0" >Computer Card 1</div>
+                <div tabindex="22" class="border-box" id="CompCard1" >Computer Card 2</div>
+                <div tabindex="23" class="border-box" id="CompCard2" >Computer Card 3</div>
+                <div tabindex="24" class="border-box" id="CompCard3" >Computer Card 4</div>
+
+                <div tabindex="25" class="border-box-points" id="PunkteComputer">C: 0</div>
+                <div tabindex="26" class="border-box" id="ZiehStapel">Ziehstapel</div>
+                <div tabindex="27" class="border-box" id="AblageStapel">Ablagestapel</div>
+                <div tabindex="28" class="border-box-points" id="PunkteHuman">H: 0</div>
+
+                <div tabindex="29" class="border-box" id="PlayerCard0" >Spieler Card 1</div>
+                <div tabindex="30" class="border-box" id="PlayerCard1"  >Spieler Card 2</div>
+                <div tabindex="31" class="border-box" id="PlayerCard2" >Spieler Card 3</div>
+                <div tabindex="33" class="border-box" id="PlayerCard3" >Spieler Card 4</div>
+
+                <div tabindex="33" >Spielstatus:</div>
+				<div tabindex="34" class="border-result-box" id="GameState">Status</div>
+
+
+            </div>
+
+        </div>
+
+        <div id="biberRight">           
+            <div class="rightContainer">
+
+                <button tabindex="41" class="buttonAnleitung">Anleitung</button>
+                <button tabindex="42" class="buttonEinstellungen">Einstellungen</button>
+                <button tabindex="43" class="buttonAnpassung1">Anpassung 1</button>
+                <button tabindex="44" class="buttonAnpassung2">Anpassung 2</button>
+                <button tabindex="45" class="buttonCopyright">Copyright</button>
+
+            </div>
+        </div> 
+    </div>	
+	
+
+	<script>
+	console.log("bereit zum Start...");
+
+	</script>
+
+    <script type="module" src="UIStuff.js"></script>
+	<!-- script type="text/javascript" src="TestOne.js"></script -->
+	<script type="text/javascript" src="game.js"></script>
+  </body>
+  
+</html>

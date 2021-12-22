@@ -1,0 +1,88 @@
+nav, section {
+    display: block;
+}
+
+
+#biberLeft, #biberRight {
+    background-color: #cfc194;
+}
+
+/* Hintergrundfarbe section setzen */
+#biberCenter {
+    background-color:#bcac7b;
+}
+
+.biberContainer {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 900px;
+    grid-gap: 5px 5px; /* Zeilenabstand Spaltenabstand */	
+	grid-auto-flow: column;
+}
+
+.leftContainer {
+    display: grid;
+    grid-template-columns: 80% ;
+    grid-template-rows: 200px 50px 50px 50px;
+    align-items: center;
+    justify-content:center;
+    grid-gap: 10px;
+    
+}
+
+.biberCenterContainer {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px 100px;
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+
+
+}
+
+.rightContainer {
+    display: grid;
+    grid-template-columns: 80% ;
+    grid-template-rows: 200px 50px 50px 50px;
+    justify-content:center;
+    align-items: center;
+    grid-gap: 20px;
+}
+
+.border-box {
+  width: 80px;
+  height: 120px;
+  padding: 20px;
+  border: 3px solid black;
+  background: grey;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+}
+
+.border-box-points {
+  width: 50px;
+  height: 5px;
+  padding: 10px;
+  border: 3px solid black;
+  background: grey;
+  display: flex;  
+  justify-content:center;
+  align-items: center;
+  
+}
+
+.border-result-box {
+   grid-column: 2/4; /** von Linie 1 bis Linie 4 **/
+   /** border: 2px solid black; **/   
+   display: flex;  
+   justify-content:center;
+   align-items: center;
+}
+
+
+
+
+
