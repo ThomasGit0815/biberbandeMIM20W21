@@ -33,7 +33,7 @@ dialog::backdrop {
     rgba(0, 0, 0, 0.3) 1px,
     rgba(0, 0, 0, 0.3) 20px
   );*/
-  backdrop-filter: blur(9px);
+  backdrop-filter: blur(7px);
 }
 
 .headline {
