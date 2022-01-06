@@ -12,6 +12,55 @@ nav, section {
     background-color:#bcac7b;
 }
 
+dialog {
+  /* background-color: var(--bg); */
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border: 3px solid black;
+  border-radius: 6px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.25);
+  max-width: 75vw;	
+}
+
+dialog::backdrop {
+  /*background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 1px,
+    rgba(0, 0, 0, 0.3) 1px,
+    rgba(0, 0, 0, 0.3) 20px
+  );*/
+  backdrop-filter: blur(9px);
+}
+
+.headline {
+    font-family: Times New Roman, times-roman, georgia, serif;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -1px;color: #444;
+}
+
+.textblock {
+	font-family: Times New Roman, times-roman, georgia, serif;
+	font-size: 14px;
+	line-height: 20px;
+    font-weight: normal;
+	color: #444;
+    text-align: justify	
+}
+
+.textblockaction {
+	font-family: Times New Roman, times-roman, georgia, serif;
+	font-size: 14px;
+	line-height: 20px;
+    font-weight: bold;
+	color: #444;
+    text-align: justify	
+}
+
+
 .biberContainer {
     display: grid;
     grid-template-columns: 15% 70% 15%;
