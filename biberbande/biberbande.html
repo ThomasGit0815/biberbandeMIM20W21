@@ -36,7 +36,8 @@
 				<button tabindex="15" class="buttonBiberbild" onclick="swap02()">Tausche 2.</button>
 				<button tabindex="16" class="buttonBiberbild" onclick="swap03()">Tausche 3.</button>
 				<button tabindex="17" class="buttonBiberbild" onclick="swap04()">Tausche 4.</button>
-                <button tabindex="18" class="buttonNeueRunde" onclick="knock()">Wertungsrunde</button>            			
+                <button tabindex="18" class="buttonNeueRunde" onclick="knock()">Wertungsrunde</button>  
+				<button tabindex="19" class="buttonNeueRunde" onclick="resetPoints()">Punkte löschen</button>
                				
             </div>
 
@@ -73,11 +74,64 @@
         <div id="biberRight">           
             <div class="rightContainer">
 
-                <button tabindex="41" class="buttonAnleitung">Anleitung</button>
+                <!-- button tabindex="41" class="buttonAnleitung">Anleitung</button -->
+				
+				<button tabindex="41" class="buttonAnleitung" onclick="showManual()">Anleitung</button>
+                <dialog id="Anleitung">
+                  <p class="headline">Anleitung</p>
+				  
+				  <p class="textblock">				  
+				  Zu Beginn des Spiels werden die Spielkarten gemischt und jeder Spieler erhält vier Karten,
+				  die er ungesehen und verdeckt nebeneinander vor sich auslegt. Die restlichen Karten bilden
+				  einen verdeckten Nachziehstapel, der in der Tischmitte platziert wird.
+				  </p>
+                  <p class="textblock">
+				  Die oberste Karte des Nachziehstapels wird abgehoben und offen daneben als erste Karte des
+				  Ablagestapels ausgelegt. Jeder Spieler darf sich zu Spielbeginn die beiden äußeren seiner 
+				  vier verdeckten Karten anschauen und wieder verdeckt hinlegen. Beginnend mit dem Startspieler
+				  spielen die Mitspieler im Uhrzeigersinn, jeder Spieler muss in seinem Zug entweder die oberste
+				  Karte vom verdeckten Nachziehstapel die oberste Karte des offenen Ablagestapels nehmen. 
+				  Entscheidet er sich für die oberste Karte des Nachziehstapels, sieht er sich diese an und kann
+				  sie, wenn es sich um eine Zahlenkarte handelt, entweder direkt auf den Ablagestapel abwerfen
+				  oder sie gegen eine seiner vier verdeckten Karten nach Wahl austauschen; er darf sich die Karte
+				  seiner Auslage jedoch nicht vorher anschauen und die ausgetauschte Karte legt er offen auf den 
+				  Ablagestapel. Handelt es sich bei der gezogenen Karte um eine Sonderkarte, darf der Spieler die
+				  entsprechende Sonderaktion ausführen:
+				  </p>
+				  <p class="textblockaction">
+                  Spähen: Der Spieler darf sich eine beliebige seiner eigenen vier Karten anschauen und wieder 
+				  verdeckt an ihren Platz zurückgelegen.
+				  </p>
+                  <p class="textblock">
+                  Wenn der Spieler seine Aktion ausgeführt hat, kommt der nächste Spieler an die Reihe. Gespielt wird,
+				  bis ein Spieler nach seiner Aktion der Überzeugung ist, die niedrigsten Karten in seiner verdeckten 
+				  Auslage zu haben, und um dies zu signalisieren auf den Tisch klopft. Damit leitet der Spieler die 
+				  letzte Runde ein und alle anderen Mitspieler kommen noch einmal an die Reihe. Nach dem Durchgang 
+				  decken alle Spieler ihre Karten auf und addieren die Kartenwerte. Sonderkarten in der Auslage werden
+				  beiseite gelegt und in Spielerreihenfolge beginnend mit dem klopfenden Spieler gegen die jeweils oberste
+				  Karte vom Nachziehstapel ausgetauscht. Die Punkte werden notiert und die nächste Runde wird gestartet.
+                  </p>
+				  <p class="textblock">
+                  Insgesamt werden so viele Durchgänge gespielt, wie Mitspieler teilnehmen. Das Spiel gewinnt der Spieler, 
+				  der nach allen Durchgängen insgesamt die wenigsten Punkte hat.
+                  </p>				  
+                    <form method="dialog">
+                      <button>Schließen</button>
+                    </form>
+                </dialog>				
                 <button tabindex="42" class="buttonEinstellungen">Einstellungen</button>
                 <button tabindex="43" class="buttonAnpassung1">Anpassung 1</button>
-                <button tabindex="44" class="buttonAnpassung2">Anpassung 2</button>
-                <button tabindex="45" class="buttonCopyright">Copyright</button>
+				
+				<dialog id="copyright">
+                  <p class="textblock" >&copy; 2022 by Vanessa, Lee, Julian, Tino, Thomas</p>				  
+                  <form method="dialog">
+                      <button>Schließen</button>
+                  </form>
+				</dialog>  				
+				
+                <button tabindex="45" class="buttonCopyright" onclick="showCopyright()">Copyright</button>
+				<div tabindex="50" id="JumpingBiber"></div>
+				
 
             </div>
         </div> 
