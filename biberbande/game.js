@@ -3,6 +3,7 @@
 var imgWidth = '140px';
 var imgHeight = '160px';
 var showOutermostTimeout = 2000;
+var jumpTimeout = 4000;
 
 var outerCard1
 var outerCard2
@@ -19,17 +20,37 @@ var shuffle = (array) => {
   return array;
 }
 
+var showManual = () => {
+ var dialog = document.getElementById('Anleitung');
+ dialog.show();
+}
+
+var showCopyright = () => {
+ var dialog = document.getElementById('copyright');
+ dialog.show();
+}
 
 var getHTMLString = (card) => {
 	
 	if(card == 'SPY'){	  
-	  //console.log("<img src=\"images/Sonderkarte_Spaehen_B.png\" width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">");
-	  return "<img src=\"images/Sonderkarte_Spaehen_B.png\" width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">";
+	  //console.log("<img src=\"images/Sonderkarte_Spaehen_B.png\" alt=\"Sonderkarte " + card +  "\""  + " width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">");
+	  return "<img src=\"images/Sonderkarte_Spaehen_B.png\" alt=\"Sonderkarte " + card +  "\""  + " width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">";
 	}else{	  
-	  //console.log("<img src=\"images/KarteB_" + card + ".png\" width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">");
-	  return "<img src=\"images/KarteB_" + card + ".png\" width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">";
+	  //console.log("<img src=\"images/KarteB_" + card + ".png\" alt=\"Zahlenkarte mit dem Wert " + card +  "\""  + "   width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">");
+	  return "<img src=\"images/KarteB_" + card + ".png\" alt=\"Zahlenkarte mit dem Wert " + card +  "\""  + "   width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">";
 	}	
 }
+
+var showJumpingBiber = () => {
+	console.log("show jumping biber..." );	
+	document.getElementById('JumpingBiber').innerHTML = "<img src=\"images/jumpingbiber.gif\" alt=\"springender Biber\"  width=\"" + imgWidth + "\" height=\"" + imgHeight + "\">";
+	setTimeout(() => { hideJumpingBiber(); }, jumpTimeout);			
+}
+
+var hideJumpingBiber = () => {
+	document.getElementById('JumpingBiber').innerHTML = "";
+}
+
 
 var showOutermostCards = () => {
   console.log("showOutermostCards..." );
@@ -117,6 +138,11 @@ var showPileCard = (card) => {
 
 var showTextPile = () => {
 	document.getElementById('ZiehStapel').innerHTML = "Ziehstapel";
+}
+
+var resetPoints = () => {
+	document.getElementById('PunkteComputer').innerHTML = "C: " + 0;
+	document.getElementById('PunkteHuman').innerHTML = "H: " + 0;	
 }
 
 
@@ -228,6 +254,7 @@ const play = (game) => {
 	
 	setComputerPoints(computerPoints);
 	setHumanPoints(playerPoints);
+	
     /*
 	const playerPoints = player.reduce(add, 0);
     console.log("Prepare award ceremony...");
@@ -238,9 +265,18 @@ const play = (game) => {
         computerPoints > playerPoints ? PLAYER.HUMAN : PLAYER.COMPUTER
       }`
 	*/
-    var logInfo1  = "Computer hat die Karten: " + computer + ", Summe:" + computerPoints;
-	var logInfo2  = " deine Karten: " + player + ", Summe:" + playerPoints;
-	var logInfo3  = `Gewonnen hat ... ${computerPoints > playerPoints ? PLAYER.HUMAN : PLAYER.COMPUTER}`;
+    var logInfo1  = "Computer hat die Karten: " + computer + " => Summe: " + computerPoints;
+	var logInfo2  = "<br>deine Karten: " + player + " => Summe: " + playerPoints;
+	var logInfo3  = `<br>Gewonnen hat => ${computerPoints > playerPoints ? PLAYER.HUMAN : PLAYER.COMPUTER}`;
+	
+	
+	console.log(PLAYER.COMPUTER, computerPoints);
+    console.log(PLAYER.HUMAN, playerPoints);
+	console.log(computerPoints < playerPoints);
+	if( playerPoints < computerPoints ){		
+	  console.log("show jumping biber...");
+	  showJumpingBiber();
+	}
 	console.log(logInfo1 + logInfo2 + logInfo3);
 	setCurrentGameState(logInfo1 + logInfo2 + logInfo3);
 	  
@@ -271,8 +307,10 @@ const play = (game) => {
 		  showCurrentPileCard("No card on the pile!");
           console.log("Ok, go ahead!");
         }
-        currentCard = pile.pop();	
-        showPileCard(currentCard);
+        currentCard = pile.pop();
+        if (currentPlayer === PLAYER.HUMAN) {
+		  showPileCard(currentCard);	
+        }        
         console.log("This is your card 2:", currentCard);
         break;
     }
