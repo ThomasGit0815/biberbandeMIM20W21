@@ -21,13 +21,11 @@ var shuffle = (array) => {
 }
 
 var showManual = () => {
- var dialog = document.getElementById('Anleitung');
- dialog.show();
+ document.getElementById('Anleitung').showModal();
 }
 
 var showCopyright = () => {
- var dialog = document.getElementById('copyright');
- dialog.show();
+ document.getElementById('copyright').showModal();
 }
 
 var getHTMLString = (card) => {
