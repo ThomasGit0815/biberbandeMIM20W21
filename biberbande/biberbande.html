@@ -2,93 +2,141 @@
 <html lang="de">
 
 <head>
-    <meta charset="utf-8">
-    <title>Entwurf zum Kartenspiel Biberbande</title>
-    <meta name="description" content="Biberbande">
-    <meta name="author" content="Vanessa, Lee, Julian, Tino, Thomas">
-    <meta name="keywords" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/design.css" type="text/css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Entwurf zum Kartenspiel Biberbande</title>
+  <meta name="description" content="Biberbande">
+  <meta name="author" content="Vanessa, Lee, Julian, Tino, Thomas">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="css/design.css" type="text/css" rel="stylesheet">
 
 </head>
 
 
 <body>
 
-    <h1>Hello Biberbande</h1>
-    <!-- script src="bundle.js"></script -->
-    <noscript>Your browser does not support JavaScript!</noscript>
-    <div id="header"></div>
-    <div id="app"></div>
+  <h1>Hello Biberbande</h1>
+  <!-- script src="bundle.js"></script -->
+  <noscript>Your browser does not support JavaScript!</noscript>
+  <div id="header"></div>
+  <div id="app"></div>
 
-    <div class="biberContainer">
-        <div id="biberLeft">
-            <nav>
+  <div class="biberContainer">
+    <div id="biberLeft">
+      <nav>
 
-                <div class="leftContainer">
+        <div class="leftContainer">
 
-                    <center><img src="images/Biber.png" width="100px" height="120px"></center>
-                    <button tabindex="10" accesskey="s" class="buttonBiberbild" onclick="startGame()">Starte Runde</button>
-                    <button tabindex="11" accesskey="k" class="buttonBiberbild" onclick="showOutermostCards()">äußere Karten zeigen</button>
-                    <button tabindex="12" accesskey="z" class="buttonBiberbild" onclick="drawPile()">¨Karte ziehen</button>
-                    <button tabindex="13" accesskey="a" class="buttonBiberbild" onclick="discard()">Karte abwerfen</button>
-                    <button tabindex="14" accesskey="1" class="buttonBiberbild" onclick="swap01()">Tausche mit Karte 1</button>
-                    <button tabindex="15" accesskey="2" class="buttonBiberbild" onclick="swap02()">Tausche mit Karte 2</button>
-                    <button tabindex="16" accesskey="3" class="buttonBiberbild" onclick="swap03()">Tausche mit Karte 3</button>
-                    <button tabindex="17" accesskey="4" class="buttonBiberbild" onclick="swap04()">Tausche mit Karte 4</button>
-                    <button tabindex="18" accesskey="w" class="buttonNeueRunde" onclick="knock()">Wertungsrunde</button>
-
-                </div>
-            </nav>
+          <center><img src="images/Biber.png" width="100px" height="120px"></center>
+          <button tabindex="10" accesskey="s" class="buttonBiberbild" onclick="startGame()">Starte Runde</button>
+          <button tabindex="11" accesskey="k" class="buttonBiberbild" onclick="showOutermostCards()">äußere Karten zeigen</button>
+          <button tabindex="12" accesskey="z" class="buttonBiberbild" onclick="drawPile()">¨Karte ziehen</button>
+          <button tabindex="13" accesskey="w" class="buttonBiberbild" onclick="discard()">Karte abwerfen</button>
+          <button tabindex="14" accesskey="1" class="buttonBiberbild" onclick="swap01()">Tausche mit Karte 1</button>
+          <button tabindex="15" accesskey="2" class="buttonBiberbild" onclick="swap02()">Tausche mit Karte 2</button>
+          <button tabindex="16" accesskey="3" class="buttonBiberbild" onclick="swap03()">Tausche mit Karte 3</button>
+          <button tabindex="17" accesskey="4" class="buttonBiberbild" onclick="swap04()">Tausche mit Karte 4</button>
+          <button tabindex="18" accesskey="n" class="buttonNeueRunde" onclick="knock()">Wertungsrunde</button>
+          <button tabindex="19" accesskey="l" class="buttonNeueRunde" onclick="resetPoints()">Punkte löschen</button>
 
         </div>
-
-        <div id="biberCenter">
-            <main>
-
-                <div class="biberCenterContainer">
-
-
-                    <!--<div tabindex="-1">Spielstatus:</div>-->
-                    <div tabindex="20" role="log" accesskey="i" class="border-result-box" id="GameState">Status</div>
-
-                    <div tabindex="-1" class="border-box" id="CompCard0">Computer Karte 1</div>
-                    <div tabindex="-1" class="border-box" id="CompCard1">Computer Karte 2</div>
-                    <div tabindex="-1" class="border-box" id="CompCard2">Computer Karte 3</div>
-                    <div tabindex="-1" class="border-box" id="CompCard3">Computer Karte 4</div>
-
-                    <div tabindex="-1" class="border-box-points" id="PunkteComputer">C: 0</div>
-                    <div tabindex="-1" class="border-box" id="ZiehStapel">Ziehstapel</div>
-                    <div tabindex="" accesskey="a" class="border-box" id="AblageStapel">Ablagestapel</div>
-                    <div tabindex="-1" class="border-box-points" id="PunkteHuman">H: 0</div>
-
-                    <div tabindex="29" class="border-box" id="PlayerCard0">Spieler Karte 1</div>
-                    <div tabindex="30" class="border-box" id="PlayerCard1">Spieler Karte 2</div>
-                    <div tabindex="31" class="border-box" id="PlayerCard2">Spieler Karte 3</div>
-                    <div tabindex="33" class="border-box" id="PlayerCard3">Spieler Karte 4</div>
-
-
-                </div>
-            </main>
-        </div>
-        <div id="biberRight">
-            <aside>
-
-                <div class="rightContainer">
-
-                    <button tabindex="41" accesskey="h" class="buttonAnleitung">Anleitung</button>
-                    <button tabindex="42" accesskey="v" class="buttonEinstellungen">Einstellungen</button>
-                    <button tabindex="43" class="buttonAnpassung1">Anpassung 1</button>
-                    <button tabindex="44" class="buttonAnpassung2">Anpassung 2</button>
-                    <button tabindex="45" class="buttonCopyright">Copyright</button>
-
-                </div>
-            </aside>
-        </div>
+      </nav>
 
     </div>
 
-    <script type="text/javascript" src="game.js"></script>
+    <div id="biberCenter">
+      <main>
+        <div class="biberCenterContainer">
+
+          <!--<div tabindex="-1">Spielstatus:</div>-->
+          <div tabindex="20" role="log" accesskey="i" class="border-result-box" id="GameState">Status</div>
+
+          <div tabindex="21" class="border-box" id="CompCard0">Computer Karte 1</div>
+          <div tabindex="22" class="border-box" id="CompCard1">Computer Karte 2</div>
+          <div tabindex="23" class="border-box" id="CompCard2">Computer Karte 3</div>
+          <div tabindex="24" class="border-box" id="CompCard3">Computer Karte 4</div>
+
+          <div tabindex="-1" class="border-box-points" id="PunkteComputer">C: 0</div>
+          <div tabindex="-1" class="border-box" id="ZiehStapel">Ziehstapel</div>
+          <div tabindex="27" accesskey="a" class="border-box" id="AblageStapel">Ablagestapel</div>
+          <div tabindex="-1" class="border-box-points" id="PunkteHuman">H: 0</div>
+
+          <div tabindex="29" class="border-box" id="PlayerCard0">Spieler Karte 1</div>
+          <div tabindex="30" class="border-box" id="PlayerCard1">Spieler Karte 2</div>
+          <div tabindex="31" class="border-box" id="PlayerCard2">Spieler Karte 3</div>
+          <div tabindex="32" class="border-box" id="PlayerCard3">Spieler Karte 4</div>
+
+        </div>
+      </main>
+    </div>
+  <div id="biberRight">
+    <aside>
+
+      <div class="rightContainer">
+
+        <!-- button tabindex="41" class="buttonAnleitung">Anleitung</button -->
+
+        <button tabindex="41" accesskey="h" class="buttonAnleitung" onclick="showManual()">Anleitung</button>
+        <dialog id="Anleitung">
+          <p class="headline">Anleitung</p>
+
+          <p class="textblock">
+            Zu Beginn des Spiels werden die Spielkarten gemischt und jeder Spieler erhält vier Karten,
+            die er ungesehen und verdeckt nebeneinander vor sich auslegt. Die restlichen Karten bilden
+            einen verdeckten Nachziehstapel, der in der Tischmitte platziert wird.
+          </p>
+          <p class="textblock">
+            Die oberste Karte des Nachziehstapels wird abgehoben und offen daneben als erste Karte des
+            Ablagestapels ausgelegt. Jeder Spieler darf sich zu Spielbeginn die beiden äußeren seiner
+            vier verdeckten Karten anschauen und wieder verdeckt hinlegen. Beginnend mit dem Startspieler
+            spielen die Mitspieler im Uhrzeigersinn, jeder Spieler muss in seinem Zug entweder die oberste
+            Karte vom verdeckten Nachziehstapel die oberste Karte des offenen Ablagestapels nehmen.
+            Entscheidet er sich für die oberste Karte des Nachziehstapels, sieht er sich diese an und kann
+            sie, wenn es sich um eine Zahlenkarte handelt, entweder direkt auf den Ablagestapel abwerfen
+            oder sie gegen eine seiner vier verdeckten Karten nach Wahl austauschen; er darf sich die Karte
+            seiner Auslage jedoch nicht vorher anschauen und die ausgetauschte Karte legt er offen auf den
+            Ablagestapel. Handelt es sich bei der gezogenen Karte um eine Sonderkarte, darf der Spieler die
+            entsprechende Sonderaktion ausführen:
+          </p>
+          <p class="textblockaction">
+            Spähen: Der Spieler darf sich eine beliebige seiner eigenen vier Karten anschauen und wieder
+            verdeckt an ihren Platz zurückgelegen.
+          </p>
+          <p class="textblock">
+            Wenn der Spieler seine Aktion ausgeführt hat, kommt der nächste Spieler an die Reihe. Gespielt wird,
+            bis ein Spieler nach seiner Aktion der Überzeugung ist, die niedrigsten Karten in seiner verdeckten
+            Auslage zu haben, und um dies zu signalisieren auf den Tisch klopft. Damit leitet der Spieler die
+            letzte Runde ein und alle anderen Mitspieler kommen noch einmal an die Reihe. Nach dem Durchgang
+            decken alle Spieler ihre Karten auf und addieren die Kartenwerte. Sonderkarten in der Auslage werden
+            beiseite gelegt und in Spielerreihenfolge beginnend mit dem klopfenden Spieler gegen die jeweils oberste
+            Karte vom Nachziehstapel ausgetauscht. Die Punkte werden notiert und die nächste Runde wird gestartet.
+          </p>
+          <p class="textblock">
+            Insgesamt werden so viele Durchgänge gespielt, wie Mitspieler teilnehmen. Das Spiel gewinnt der Spieler,
+            der nach allen Durchgängen insgesamt die wenigsten Punkte hat.
+          </p>
+          <form method="dialog">
+            <button>Schließen</button>
+          </form>
+        </dialog>
+        <button tabindex="42" accesskey="v" class="buttonEinstellungen">Einstellungen</button>
+        <button tabindex="43" class="buttonAnpassung1">Anpassung 1</button>
+
+        <dialog id="copyright">
+          <p class="textblock">&copy; 2022 by Vanessa, Lee, Julian, Tino, Thomas</p>
+          <form method="dialog">
+            <button>Schließen</button>
+          </form>
+        </dialog>
+
+        <button tabindex="45" class="buttonCopyright" onclick="showCopyright()">Copyright</button>
+        <div tabindex="50" id="JumpingBiber"></div>
+
+      </div>
+    </aside>
+  </div>
+
+  <script type="text/javascript" src="game.js"></script>
 </body>
 
 </html>
