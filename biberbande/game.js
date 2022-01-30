@@ -26,6 +26,14 @@ var showCopyright = () => {
   document.getElementById('copyright').showModal();
 }
 
+var showSettings = () => {
+  document.getElementById('settings').showModal();
+}
+
+var showPreset = () => {
+  document.getElementById('preset1').showModal();
+}
+
 var getHTMLString = (card) => {
 
   if (card == 'SPY') {

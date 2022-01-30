@@ -12,8 +12,13 @@ nav, section {
     background-color:#bcac7b;
 }
 
+h1{
+  font-family: Helvetica, sans-serif;
+}
+
 dialog {
   /* background-color: var(--bg); */
+  font-family: Helvetica, sans-serif;
   color: var(--text-color);
   text-align: center;
   padding: 2rem;
@@ -37,28 +42,28 @@ dialog::backdrop {
 }
 
 .headline {
-    font-family: Times New Roman, times-roman, georgia, serif;
+    font-family: Verdana, sans-serif;
     font-size: 28px;
     line-height: 40px;
     letter-spacing: -1px;color: #444;
 }
 
 .textblock {
-	font-family: Times New Roman, times-roman, georgia, serif;
+	font-family: Verdana, sans-serif;
 	font-size: 14px;
 	line-height: 20px;
     font-weight: normal;
 	color: #444;
-    text-align: justify	
+    text-align: justify
 }
 
 .textblockaction {
-	font-family: Times New Roman, times-roman, georgia, serif;
+	font-family: Verdana, sans-serif;
 	font-size: 14px;
 	line-height: 20px;
     font-weight: bold;
 	color: #444;
-    text-align: justify	
+    text-align: justify
 }
 
 
@@ -66,7 +71,7 @@ dialog::backdrop {
     display: grid;
     grid-template-columns: 15% 70% 15%;
     grid-template-rows: 900px;
-    grid-gap: 5px 5px; /* Zeilenabstand Spaltenabstand */	
+    grid-gap: 5px 5px; /* Zeilenabstand Spaltenabstand */
 	grid-auto-flow: column;
 }
 
@@ -77,7 +82,7 @@ dialog::backdrop {
     align-items: center;
     justify-content:center;
     grid-gap: 10px;
-    
+
 }
 
 .biberCenterContainer {
@@ -101,6 +106,7 @@ dialog::backdrop {
 }
 
 .border-box {
+  font-family: Helvetica, sans-serif;
   width: 80px;
   height: 120px;
   padding: 20px;
@@ -113,26 +119,23 @@ dialog::backdrop {
 }
 
 .border-box-points {
+  font-family: Helvetica, sans-serif;
   width: 50px;
   height: 5px;
   padding: 10px;
   border: 3px solid black;
   background: grey;
-  display: flex;  
+  display: flex;
   justify-content:center;
   align-items: center;
-  
+
 }
 
 .border-result-box {
-   grid-column: 1/5; /** von Linie 2 bis Linie 4 **/
-   /** border: 2px solid black; **/   
-   display: flex;  
-   justify-content:center;
-   align-items: center;
+  font-family: Helvetica, sans-serif;
+  grid-column: 1/5; /** von Linie 2 bis Linie 4 **/
+  /** border: 2px solid black; **/
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }
-
-
-
-
-

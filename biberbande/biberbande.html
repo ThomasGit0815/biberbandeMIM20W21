@@ -121,8 +121,25 @@
             <button>Schließen</button>
           </form>
         </dialog>
-        <button tabindex="42" accesskey="v" class="buttonEinstellungen">Einstellungen</button>
-        <button tabindex="43" class="buttonAnpassung1">Anpassung 1</button>
+        <button tabindex="42" accesskey="v" class="buttonEinstellungen" onClick="showSettings()">Einstellungen</button>
+        <dialog id="settings">
+          <button>Textgröße</button>
+          <button>Kontrast</button>
+          <button>Farben</button>
+          <button>Mauszeiger</button>
+          <button>Sound</button>
+          <form method="dialog">
+            <button>Schließen</button>
+          </form>
+        </dialog>
+        <button tabindex="43" class="buttonAnpassung1" onClick="showPreset()">Anpassung 1</button>
+        <dialog id="preset1">
+          <img src="images/acc/font.png" width="50" height="50" alt="Schrifgröße">
+          <img src="images/acc/contrast.png" width="50" height="50" alt="Kontrasteinstellung">
+          <form method="dialog">
+            <button>Schließen</button>
+          </form>
+        </dialog>
 
         <dialog id="copyright">
           <p class="textblock">&copy; 2022 by Vanessa, Lee, Julian, Tino, Thomas</p>
